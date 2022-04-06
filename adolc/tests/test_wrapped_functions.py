@@ -2,14 +2,14 @@ import numpy
 import numpy.random
 from numpy.testing import *
 import numpy
-import pylab
+# import pylab
 
 from adolc import *
 
 class OperationsTests ( TestCase ):
 
     def test_constructors(self):
-        a = adouble(13.);
+        a = adouble(13.)
         b = adouble(5)
         c = adouble(a)
 
@@ -485,11 +485,11 @@ class LowLevelFunctionsTests ( TestCase ):
         y = numpy.zeros(1)
         tape_to_latex(123,x,y)
         import os
-        os.system("mv tape_123.tex /tmp")
-        cwd = os.getcwd()
-        os.chdir("/tmp")
-        os.system("pdflatex tape_123.tex ")
-        os.chdir(cwd)
+        # os.system("mv tape_123.tex tmp")
+        # cwd = os.getcwd()
+        # os.chdir(os.path.abspath("tmp"))
+        # os.system("pdflatex tape_123.tex ")
+        # os.chdir(cwd)
 
 
 class HighLevelFunctionsTests ( TestCase ):

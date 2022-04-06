@@ -2,7 +2,7 @@ import numpy
 import numpy.random
 from numpy.testing import *
 import numpy
-import pylab
+# import pylab
 
 from adolc import *
 
