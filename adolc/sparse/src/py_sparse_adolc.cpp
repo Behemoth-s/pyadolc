@@ -8,7 +8,7 @@ bp::list	wrapped_jac_pat(short tape_tag, bpn::ndarray &bpn_x,bpn::ndarray &bpn_o
 
 	double* x = (double*) nu::data(bpn_x);
 	int* options  = (int*) nu::data(bpn_options);
-	unsigned int* JP[M];
+	unsigned int** JP = new unsigned int*[M];
 
 	jac_pat(tape_tag, M, N, x, JP, options);
 
@@ -105,7 +105,7 @@ bp::list	wrapped_hess_pat(short tape_tag, bpn::ndarray &bpn_x,npy_intp option){
 
 	double* x = (double*) nu::data(bpn_x);
 	int opt   = static_cast<int>(option);
-	unsigned int* HP[N];
+	unsigned int** HP = new unsigned int*[N];
 
 	hess_pat(tape_tag, N, x, HP, opt);
 
